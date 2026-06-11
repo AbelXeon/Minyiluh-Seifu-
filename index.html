@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minyiluh Seifu - Minimalist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        header {
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .nav-logo {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .section-box {
+            border-bottom: 2px solid var(--border-color);
+            padding: 6rem 1.5rem;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero-title {
+            font-size: 4.5rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .desc-text {
+            font-size: 1.5rem;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+        .title-left {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .skills-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .skill-item {
+            border: 2px solid var(--border-color);
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .edu-wrapper h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .edu-meta {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .contact-input {
+            width: 100%;
+            border: 2px solid var(--border-color);
+            padding: 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            outline: none;
+        }
+        .contact-btn {
+            background: var(--text-color);
+            color: var(--bg-color);
+            padding: 1rem 2.5rem;
+            border: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .contact-btn:hover {
+            background: #333333;
+        }
+        footer {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.8rem; }
+            .grid-layout { grid-template-columns: 1fr; gap: 2rem; }
+            .skills-list { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo">Minyiluh Seifu</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="about" class="section-box">
+        <div class="section-inner">
+            <h1 class="hero-title">Minyiluh<br>Seifu</h1>
+            <p class="desc-text">Computer Science Student at Infolink University College, Hawassa. Building software structures through strict, logical planning and simplified architectural pipelines.</p>
+        </div>
+    </div>
+
+    <div id="skills" class="section-box">
+        <div class="section-inner grid-layout">
+            <div class="title-left">[Skills]</div>
+            <div class="skills-list">
+                <div class="skill-item">Java Standard</div>
+                <div class="skill-item">Python Development</div>
+                <div class="skill-item">HTML5 / CSS Grid</div>
+                <div class="skill-item">Relational Databases</div>
+                <div class="skill-item">Git Command Line</div>
+                <div class="skill-item">Software Testing</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="education" class="section-box">
+        <div class="section-inner grid-layout">
+            <div class="title-left">[Education]</div>
+            <div class="edu-wrapper">
+                <h3>BSc in Computer Science</h3>
+                <div class="edu-meta">Infolink University College — Hawassa | 2023 - Present</div>
+                <p>Acquiring fundamental theories of software compilation, practical programming paradigms, structured query logic, and system modeling methodologies.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section-box">
+        <div class="section-inner grid-layout">
+            <div class="title-left">[Contact]</div>
+            <div>
+                <form onsubmit="event.preventDefault(); alert('Message Recorded.');">
+                    <input type="text" class="contact-input" placeholder="FULL NAME" required>
+                    <input type="email" class="contact-input" placeholder="EMAIL ADDRESS" required>
+                    <textarea class="contact-input" rows="4" placeholder="MESSAGE BODY" required></textarea>
+                    <button type="submit" class="contact-btn">Submit Information</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>&copy; 2026 Minyiluh Seifu</div>
+        <div>Infolink Univ. Project</div>
+    </footer>
+</body>
+</html>
