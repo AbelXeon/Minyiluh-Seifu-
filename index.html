@@ -114,6 +114,18 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
+        /* Hero Split Grid Layout */
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+        }
         .hero-title {
             font-size: 4.5rem;
             line-height: 0.9;
@@ -126,6 +138,47 @@
             max-width: 800px;
             line-height: 1.4;
         }
+
+        /* Hero Right Side Brutalist Animation Graphics */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        .brutalist-art {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .shape {
+            position: absolute;
+            border: 3px solid var(--border-color);
+            background-color: transparent;
+            transition: border-color 0.3s ease;
+        }
+        .shape-1 {
+            width: 240px;
+            height: 240px;
+            animation: spin-clockwise 20s linear infinite;
+        }
+        .shape-2 {
+            width: 160px;
+            height: 160px;
+            animation: spin-counter 12s linear infinite;
+        }
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            background-color: var(--text-color);
+            border-radius: 0;
+            animation: pulse-square 4s ease-in-out infinite;
+        }
+
+        /* Grid Layout */
         .grid-layout {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -220,7 +273,31 @@
             font-size: 0.85rem;
         }
 
+        /* Keyframe Animations */
+        @keyframes spin-clockwise {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes spin-counter {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        @keyframes pulse-square {
+            0%, 100% { transform: scale(1) rotate(45deg); }
+            50% { transform: scale(0.85) rotate(225deg); }
+        }
+
         /* Responsive Media Queries */
+        @media (max-width: 900px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero-visual {
+                order: 2; /* Stacks the animation naturally under the text on medium screens */
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title { font-size: 2.8rem; }
             .grid-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -253,6 +330,16 @@
                 letter-spacing: 1px;
             }
         }
+
+        @media (max-width: 480px) {
+            .brutalist-art {
+                width: 200px;
+                height: 200px;
+            }
+            .shape-1 { width: 180px; height: 180px; }
+            .shape-2 { width: 120px; height: 120px; }
+            .shape-3 { width: 60px; height: 60px; }
+        }
     </style>
 </head>
 <body>
@@ -274,9 +361,18 @@
     </header>
 
     <div id="about" class="section-box reveal">
-        <div class="section-inner">
-            <h1 class="hero-title">Minyiluh<br>Seifu</h1>
-            <p class="desc-text">Computer Science Student at Infolink University College, Hawassa. Building software structures through strict, logical planning and simplified architectural pipelines.</p>
+        <div class="section-inner hero-layout">
+            <div class="hero-content">
+                <h1 class="hero-title">Minyiluh<br>Seifu</h1>
+                <p class="desc-text">Computer Science Student at Infolink University College, Hawassa. Building software structures through strict, logical planning and simplified architectural pipelines.</p>
+            </div>
+            <div class="hero-visual">
+                <div class="brutalist-art">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
         </div>
     </div>
 
